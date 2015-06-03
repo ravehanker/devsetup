@@ -1,0 +1,1 @@
+rsync -auvz --exclude '.*' disconest2.smf1.twitter.com:~/`relpath $HOME $PWD`/ . && rsync -auvz --exclude '.*' . disconest2.smf1.twitter.com:~/`relpath $HOME $PWD`/

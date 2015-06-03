@@ -1,0 +1,54 @@
+[color]
+	ui = auto
+	pager = true
+	status = auto
+	branch = auto
+[alias]
+	st = status
+	br = branch
+	co = checkout
+	di = diff
+	lg1 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	#lg2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+	lg = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(black)%s%C(reset) %C(bold black)— %an%C(reset)' --abbrev-commit
+	#lg = !"git lg2"
+  refresh = !bash -c "cd .; current_branch=`git name-rev --name-only head`;echo $current_branch; if [[ 'xx' != 'x${ current_branch}x' ]]; then git checkout master; git pull; git checkout ${current_branch}; git merge --no-ff master; fi"
+[color "status"]
+	header = bold
+[user]
+	name = Ravi Shankar Thangavel
+	email = rthangavel@twitter.com
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = vimdiff2
+[mergetool "diffconflicts"]
+	cmd = vimdiff $LOCAL $MERGED $REMOTE 
+	trustExitCode = true
+	keepBackup = false
+[core]
+	excludesfile = /Users/rthangavel/.gitignore_global
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[instaweb]
+  httpd = webrick
+
+[gui]
+	diffopts = -w
+
+[diff]
+	renames = true
+[http]
+	postBuffer = 524288000
+
+[remote "gerrit"]
+  url = ssh://gerrit.twitter.biz:29418/twitter-mobile
+  fetch = +refs/heads/*:refs/remotes/gerrit/*
+[push]
+	default = simple
