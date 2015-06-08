@@ -15,9 +15,9 @@ au BufRead,BufNewFile *.py set ts=2 sw=2 sts=2
 au BufRead,BufNewFile *.aurora set filetype=python
 
 set tw=0
-set background=dark
 set nohls
 set smartindent
 set showcmd
 
 colorscheme default
+set background=dark
