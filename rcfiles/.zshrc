@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/rthangavel/.oh-my-zsh
+export ZSH=/Users/ravithangavel/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -9,6 +9,10 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -49,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-#export PATH="/usr/local/git/bin:/usr/local/mysql/bin:/usr/local/bin:/opt/twitter/bin:/Users/rthangavel/bin:/Users/rthangavel/.twitools/src/twitter-utilities/sbt:/Users/rthangavel/.rvm/bin:/Users/rthangavel/.tools-cache/home/aurora/tools/dottools/bin:/Users/rthangavel/.tools-cache/home/devprod/git-review/bin:/Users/rthangavel/.tools-cache/home/devprod/tools/source/git.Darwin.x86_64/bin:/Users/rthangavel/.tools-cache/home/francesco/user_tools/oscar/bin:/Users/rthangavel/.tools-cache/home/klaplante/bin/capesospy/bin:/Users/rthangavel/.tools-cache/home/devprod/packer/bin:/Users/rthangavel/.tools-cache/home/observe/tools/user/bin:/Users/rthangavel/.tools-cache/home/woodstar/tools/fabolous/bin:/Users/rthangavel/.tools-cache/home/aurora/tools/client/bin:/opt/twitter/rvm/gems/ruby-1.9.3-p484/bin:/opt/twitter/rvm/gems/ruby-1.9.3-p484@global/bin:/opt/twitter/rvm/rubies/ruby-1.9.3-p484/bin:/Users/rthangavel/.tools-cache/home/aurora/tools/dottools/bin:/Users/rthangavel/.tools-cache/home/devprod/git-review/bin:/Users/rthangavel/.tools-cache/home/devprod/tools/source/git.Darwin.x86_64/bin:/Users/rthangavel/.tools-cache/home/francesco/user_tools/oscar/bin:/Users/rthangavel/.tools-cache/home/klaplante/bin/capesospy/bin:/Users/rthangavel/.tools-cache/home/devprod/packer/bin:/Users/rthangavel/.tools-cache/home/observe/tools/user/bin:/Users/rthangavel/.tools-cache/home/woodstar/tools/fabolous/bin:/Users/rthangavel/.tools-cache/home/aurora/tools/client/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/opt/twitter/rvm/bin:/Users/rthangavel/local/bin:/opt/twitter/sbin:/Users/rthangavel/local/apache-ant-1.8.4/bin:/Users/rthangavel/.rvm/bin:/opt/twitter/rvm/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -79,12 +83,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-#PATH=$PATH:/opt/twitter/rvm/bin # Add RVM to PATH for scripting
-#export PATH=$PATH:~/local/bin:/opt/twitter/sbin:~/local/apache-ant-1.8.4/bin
-export PATH=/usr/local/mysql/bin:/usr/local/bin:/opt/twitter/bin:${HOME}/bin:${HOME}/.twitools/src/twitter-utilities/sbt:$HOME/.rvm/bin:$PATH:~/local/bin
-
 export EDITOR="vim"
 # Huge command history: the interaction between these two size limits is a little funny, but these should get you pretty far
 SAVEHIST=50000
@@ -93,9 +91,3 @@ setopt inc_append_history
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_save_no_dups
-
-# dottools: add distribution binary directories to PATH
-if [[ -r $HOME/.tools-cache/setup-dottools-path.sh ]]; then
-  source $HOME/.tools-cache/setup-dottools-path.sh
-fi
-

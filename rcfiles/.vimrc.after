@@ -21,3 +21,13 @@ set showcmd
 
 colorscheme default
 set background=dark
+
+for i in  split(expand('%:p'),'/')
+   if i ==# 'yourpeople2'
+      set tabstop=2        "This is just the visualization and can be set to anything
+      set shiftwidth=2     "This controls the >> and << operations
+      set softtabstop=2    "This controls tab in insert mode if softtabstop == tabstop: it uses tabs
+      set noexpandtab      "Use tabs not spaces
+      break
+   endif
+endfor
