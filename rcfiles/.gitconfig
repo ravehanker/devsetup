@@ -23,13 +23,13 @@
 [merge]
 	tool = vimdiff2
 [mergetool "diffconflicts"]
-	cmd = vimdiff $LOCAL $MERGED $REMOTE 
+	cmd = vimdiff $LOCAL $MERGED $REMOTE
 	trustExitCode = true
 	keepBackup = false
 [core]
-	excludesfile = /Users/rthangavel/.gitignore_global
 	editor = /usr/bin/vim
-	pager = less -x2
+  xpager = less -x2
+	excludesfile = /Users/ravithangavel/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -42,6 +42,7 @@
 
 [gui]
 	diffopts = -w
+	tabsize = 4
 
 [diff]
 	renames = true
@@ -53,3 +54,7 @@
   fetch = +refs/heads/*:refs/remotes/gerrit/*
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge --skip %f
+	required = true

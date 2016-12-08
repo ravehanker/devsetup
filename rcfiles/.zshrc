@@ -5,7 +5,7 @@ export ZSH=/Users/ravithangavel/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="tjkirch"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,8 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$HOME/local/bin:$HOME/workspace/ZenTools/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,3 +90,15 @@ setopt inc_append_history
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_save_no_dups
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+#source /usr/local/bin/virtualenvwrapper.sh
+
+OPENSSL_PATH='/usr/local/opt/openssl'
+export LDFLAGS="-L$OPENSSL_PATH/lib"
+export CFLAGS="-I$OPENSSL_PATH/include"
+export SWIG_FEATURES="-cpperraswarn -includeall -I$OPENSSL_PATH/include"
