@@ -29,7 +29,7 @@
 [core]
 	editor = /usr/bin/vim
   xpager = less -x2
-	excludesfile = /Users/ravithangavel/.gitignore
+	excludesfile = /Users/rthangavel/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
