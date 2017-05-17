@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python manage.py test --reusedb --settings=yourpeople.test_local_settings $@
