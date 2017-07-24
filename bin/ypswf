@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tmux \
+  new-session "source venv/bin/activate && moto_server swf; read" \; \
+  new-window "source venv/bin/activate && python manage.py startswfworker -d dev_local -t default; read" \; \
+  new-window "source venv/bin/activate && python manage.py startswfdecider -d dev_local -t default -w swf_tasks.workflows.PeriodicTasksRunner -w swf_tasks.workflows.SingleTaskRunner; read"
