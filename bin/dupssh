@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -i $1 ubuntu@$2 -t sudo bash
