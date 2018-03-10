@@ -53,7 +53,10 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/local/bin:$HOME/workspace/ZenTools/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin"
+export GOPATH="$HOME/workspace/goworkspace"
+export PATH="$HOME/local/bin:$HOME/local/devsetup/bin:$HOME/workspace/ZenTools/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/go/bin:$GOPATH/bin"
+export PATH="$PATH:$HOME/local/confluent-3.3.0/bin"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,5 +103,13 @@ export PIP_RESPECT_VIRTUALENV=true
 
 OPENSSL_PATH='/usr/local/opt/openssl'
 export LDFLAGS="-L$OPENSSL_PATH/lib"
-export CFLAGS="-I$OPENSSL_PATH/include"
+export CFLAGS="-I $OPENSSL_PATH/include"
 export SWIG_FEATURES="-cpperraswarn -includeall -I$OPENSSL_PATH/include"
+
+
+# OPAM configuration
+#. /Users/rthangavel/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
