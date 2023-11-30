@@ -46,12 +46,10 @@
 
 [diff]
 	renames = true
+	pager = false
 [http]
 	postBuffer = 524288000
 
-[remote "gerrit"]
-  url = ssh://gerrit.twitter.biz:29418/twitter-mobile
-  fetch = +refs/heads/*:refs/remotes/gerrit/*
 [push]
 	default = simple
 [filter "lfs"]
