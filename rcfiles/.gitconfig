@@ -28,7 +28,7 @@
 	keepBackup = false
 [core]
 	editor = /usr/bin/vim
-  xpager = less -x2
+	pager = less -F
 	excludesfile = /Users/rthangavel/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

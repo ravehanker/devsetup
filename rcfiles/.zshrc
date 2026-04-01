@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/ravi/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -71,7 +78,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,3 +135,52 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="./node_modules/.bin:$PATH"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+
+#export PATH="/opt/homebrew/opt/ruby/bin:$PATH:/opt/homebrew/opt/python@3.14/libexec/bin"
+
+alias p=pnpm
+alias px=pnpx
+alias vim=nvim
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
+
+export GOPATH="/Users/ravi/go"
+
+# This defines the docker hub to use when running integration tests and building docker images
+# eg: HUB="docker.io/istio", HUB="gcr.io/istio-testing"
+export HUB="docker.io/$USER"
+
+# This defines the docker tag to use when running integration tests and
+# building docker images to be your user id. You may also set this variable
+# this to any other legitimate docker tag.
+export TAG=$USER
+
+# This defines a shortcut to change directories to $HOME/istio.io
+export ISTIO=$GOPATH/src/istio.io/istiio
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+
+# Added by Antigravity
+export PATH="/Users/ravi/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/ravi/.bun/_bun" ] && source "/Users/ravi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+export PATH="$PATH:~/local/bin"
